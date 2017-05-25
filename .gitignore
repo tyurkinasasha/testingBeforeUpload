@@ -1,4 +1,4 @@
-# Windows image file caches
+'# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -13,6 +13,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+.idea
+*.iml
 
 # Windows shortcuts
 *.lnk
