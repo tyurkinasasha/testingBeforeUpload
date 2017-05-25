@@ -1,3 +1,4 @@
+package Unit2.Task2;
 
 public class Eraser implements OfficeSupplies {
     private final float price = 15f;
