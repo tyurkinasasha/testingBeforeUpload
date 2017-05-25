@@ -4,6 +4,7 @@ import Unit2.Task3.implementations.StarterKit;
 import Unit2.Task3.interfaces.OfficeSupplies;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 /**
@@ -14,7 +15,9 @@ public class Main {
         StarterKit sk=new StarterKit();
         NameComparator nc=new NameComparator();
         PriceComparator pc=new PriceComparator();
-
+        Collections.sort(sk.officeSuppliesList,nc);
+        System.out.println();
+        Collections.sort(sk.officeSuppliesList,pc);
         OfficeSupplies os[]=sk.officeSuppliesList.toArray(new OfficeSupplies[sk.officeSuppliesList.size()]);
         System.out.println(Arrays.toString(os));
         Arrays.sort(os,nc);
