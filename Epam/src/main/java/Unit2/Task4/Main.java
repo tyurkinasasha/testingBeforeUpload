@@ -3,6 +3,7 @@ package Unit2.Task4;
 import Unit2.Task3.implementations.StarterKit;
 import Unit2.Task3.interfaces.OfficeSupplies;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -11,24 +12,15 @@ import java.util.Comparator;
 public class Main {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
         StarterKit sk=new StarterKit();
-        Comparator <OfficeSupplies>nameComparator= new Comparator<OfficeSupplies>() {
-            @Override
-            public int compare(OfficeSupplies o1, OfficeSupplies o2) {
-                return 0;
-            }
-        };
-        Comparator <OfficeSupplies>priceComparator= new Comparator<OfficeSupplies>() {
-            @Override
-            public int compare(OfficeSupplies o1, OfficeSupplies o2) {
-                return 0;
-            }
-        };
-        Comparator <OfficeSupplies>priceAndNameComparator= new Comparator<OfficeSupplies>() {
-            @Override
-            public int compare(OfficeSupplies o1, OfficeSupplies o2) {
-                return 0;
-            }
-        };
+        NameComparator nc=new NameComparator();
+        PriceComparator pc=new PriceComparator();
+
+        OfficeSupplies os[]=sk.officeSuppliesList.toArray(new OfficeSupplies[sk.officeSuppliesList.size()]);
+        System.out.println(Arrays.toString(os));
+        Arrays.sort(os,nc);
+        System.out.println(Arrays.toString(os));
+        Arrays.sort(os,pc);
+        System.out.println(Arrays.toString(os));
 
 
     }

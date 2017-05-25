@@ -1,4 +1,5 @@
 package Unit2.Task4;
+
 import Unit2.Task3.interfaces.OfficeSupplies;
 
 import java.util.Comparator;
@@ -9,10 +10,10 @@ import java.util.Comparator;
 public class NameComparator implements Comparator<OfficeSupplies> {
     @Override
     public int compare(OfficeSupplies o1, OfficeSupplies o2) {
-        int res = o1.getName().compareTo(o2.getName());
-        if (res == 0) {
-            res = Integer.compare(o1.getPrice(),o2.getPrice());
-        }
-        return res;
+        return o1.getName().compareTo(o2.getName());
+//        if (res == 0) {
+//            res = Integer.compare(o1.getPrice(),o2.getPrice());
+//        }
+        //return res;
     }
 }

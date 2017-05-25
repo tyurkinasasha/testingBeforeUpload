@@ -5,9 +5,9 @@ import Unit2.Task3.interfaces.OfficeSupplies;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StarterKit implements Comparable{
-    private final int count=5;
-    private List<OfficeSupplies> officeSuppliesList=new ArrayList<>();
+public class StarterKit{
+    private final int count=3;
+    public List<OfficeSupplies> officeSuppliesList=new ArrayList<>();
     public StarterKit() throws InstantiationException, IllegalAccessException {
         addSuppliesToList(Pen.class,count);
         addSuppliesToList(Eraser.class,count);
@@ -28,10 +28,5 @@ public class StarterKit implements Comparable{
         return "StarterKit{" +
                 "officeSuppliesList=" + officeSuppliesList +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 }
