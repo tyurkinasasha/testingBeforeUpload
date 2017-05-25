@@ -13,7 +13,6 @@ public class NameComparator implements Comparator<OfficeSupplies> {
         if (res == 0) {
             res = Integer.compare(o1.getPrice(),o2.getPrice());
         }
-        System.out.println("hey");
         return res;
     }
 }

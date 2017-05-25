@@ -11,7 +11,6 @@ import java.util.Comparator;
 public class Main {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
         StarterKit sk=new StarterKit();
-        System.out.println("hey");
         Comparator <OfficeSupplies>nameComparator= new Comparator<OfficeSupplies>() {
             @Override
             public int compare(OfficeSupplies o1, OfficeSupplies o2) {

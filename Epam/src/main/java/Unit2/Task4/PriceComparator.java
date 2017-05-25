@@ -14,7 +14,6 @@ public class PriceComparator implements Comparator<OfficeSupplies> {
         if (res == 0) {
             res = o1.getName().compareTo(o2.getName());
         }
-        System.out.println("hey");
         return res;
     }
 

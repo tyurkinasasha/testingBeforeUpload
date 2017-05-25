@@ -11,8 +11,7 @@ import java.util.Comparator;
 public class NameAndPriceComparator implements Comparator<OfficeSupplies> {
     @Override
     public int compare(OfficeSupplies o1, OfficeSupplies o2) {
-        //int res=o1
-        System.out.println("hey");
+        //int res=o
         return 1;
     }
 }
