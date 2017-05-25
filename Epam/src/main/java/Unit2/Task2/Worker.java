@@ -1,7 +1,4 @@
 package Unit2.Task2;
-
-import Unit2.Task1.Pen;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +15,7 @@ public class Worker {
     }
 
     public void addPens(int penCount) throws InstantiationException, IllegalAccessException {
-        addSupply(penCount, Unit2.Task1.Pen.class);
+        addSupply(penCount,Pen.class);
         this.penCount += penCount;
         System.out.println("" + penCount + " pens added!");
     }

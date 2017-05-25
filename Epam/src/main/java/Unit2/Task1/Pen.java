@@ -1,7 +1,4 @@
-package Unit2.Task1; /**
- * Created by hp on 09.05.2017.
- */
-
+package Unit2.Task1;
 
 import java.awt.*;
 
