@@ -1,5 +1,6 @@
 package practice.brackets;
 
+import java.util.Arrays;
 import java.util.EmptyStackException;
 import java.util.Scanner;
 import java.util.Stack;
@@ -8,22 +9,22 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in); //created new scaner that scans over a standrad system.in stream
         String input = in.nextLine();
         System.out.println(matches(input));
     }
 
     public static boolean matches(String input) {
-        Stack<String> stack = new Stack<String>();
-        String lastOpener = "";
-        String[] chars = input.split("");
-        Pattern opener = Pattern.compile("[({\\[]");
-        Pattern closer = Pattern.compile("[)}\\]]");
-        for (String aChar : chars) {
+        Stack<String> stack = new Stack<>(); // creating new stack
+        String lastOpener = ""; //var used to look at the last opener saved
+        String[] chars = input.split("");//splits up input string by single characters
+        Pattern opener = Pattern.compile("[({\\[]"); //checks regex opening brackets such as ( { and [
+        Pattern closer = Pattern.compile("[)}\\]]"); // checks regex closing brackets such as ) } and ]
+        for (String aChar : chars) { //iterates over chars array and checks if char matches the regex
             Matcher matcher = opener.matcher(aChar);
             Matcher matcher2 = closer.matcher(aChar);
-            if (matcher.matches()) {
-                lastOpener = aChar;
+            if (matcher.matches()) { //if char matches set this char as lastOpener var and put it
+                lastOpener = aChar; // into stack
                 stack.push(aChar);
             }
             else if (matcher2.matches()) {
