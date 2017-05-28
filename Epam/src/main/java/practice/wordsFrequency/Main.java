@@ -1,9 +1,7 @@
 package practice.wordsFrequency;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,11 +9,12 @@ import java.util.regex.Pattern;
  * Created by Tyurkina Alexandra on 5/26/2017.
  */
 public class Main {
-    static Map<String, Integer> stat = new HashMap<>();
+    static Map<Integer, String> stat = new TreeMap<>(Collections.reverseOrder());
     static StringBuilder sb = new StringBuilder();
-    //static final String DELIMS="\\t\\r\\n\\f";
+//    static MapComparator mp = new MapComparator();
+
     public static void main(String[] args) {
-        Pattern word = Pattern.compile("[a-z]{3,}");
+        Pattern word = Pattern.compile("([a-z]{3,})+");
 
         try (BufferedReader br = new BufferedReader(new FileReader(new Getter().getFile()))) {
             while (br.ready()) {
@@ -26,30 +25,38 @@ public class Main {
         }
         StringTokenizer st = new StringTokenizer(sb.toString());
         System.out.println(st.countTokens());
-        while (st.hasMoreTokens()){
-            String s=st.nextToken();
-            Matcher matcher=word.matcher(s);
-            if (matcher.matches()){
-                if (stat.containsKey(s)){
-                    int i=stat.get(s);
-                    stat.replace(s,++i);
-                }
-                else stat.put(s,1);
+        while (st.hasMoreTokens()) {
+            String s = st.nextToken();
+            Matcher matcher = word.matcher(s);
+            if (matcher.matches()) {
+                if (stat.containsValue(s)) {
+                    int i = getKeyByValue(stat, s);
+//                    stat.replace(++i, s);
+                    stat.remove(i);
+                    stat.put(++i,s);
+                } else stat.put(1, s);
             }
         }
+        System.out.println(stat.size());
+        System.out.println(stat.values().size());
+
         System.out.println(stat);
 
-    }
-
-    private static InputStreamReader getResource() {
-        Class<Main> myClass = Main.class;
-        return new InputStreamReader(myClass.getResourceAsStream("war_and_peace.txt"));
     }
 
     static class Getter {
         File getFile() {
             return new File(getClass().getClassLoader().getResource("war_and_peace.txt").getFile());
         }
+    }
+
+    static <T, E> T getKeyByValue(Map<T, E> map, E value) {
+        for (Map.Entry<T, E> entry : map.entrySet()) {
+            if (Objects.equals(value, entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 
 }

@@ -15,6 +15,7 @@ public class Main {
         StarterKit sk=new StarterKit();
         NameComparator nc=new NameComparator();
         PriceComparator pc=new PriceComparator();
+        NameAndPriceComparator npc=new NameAndPriceComparator(nc,pc);
         Collections.sort(sk.officeSuppliesList,nc);
         System.out.println();
         Collections.sort(sk.officeSuppliesList,pc);
