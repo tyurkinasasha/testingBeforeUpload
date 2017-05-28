@@ -12,7 +12,7 @@ public class StarterKit{
         addSuppliesToList(Pen.class,count);
         addSuppliesToList(Eraser.class,count);
         addSuppliesToList(Pencil.class,count);
-        addSuppliesToList(calendarBook.class,count);
+        addSuppliesToList(CalendarBook.class,count);
         addSuppliesToList(PencilWithEraser.class,count);
         addSuppliesToList(Copybook.class,count);
 

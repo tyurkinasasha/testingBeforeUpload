@@ -2,7 +2,7 @@ package Unit2.Task3.implementations;
 
 import Unit2.Task3.interfaces.CanBeWrittenOn;
 
-public class calendarBook implements CanBeWrittenOn {
+public class CalendarBook implements CanBeWrittenOn {
     private final  String name="calendarBook";
     private final int price = 70;
     @Override
@@ -17,7 +17,7 @@ public class calendarBook implements CanBeWrittenOn {
 
     @Override
     public String toString() {
-        return "calendarBook{" +
+        return "CalendarBook{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';

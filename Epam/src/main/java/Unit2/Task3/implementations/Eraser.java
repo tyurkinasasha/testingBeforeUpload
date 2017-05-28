@@ -3,15 +3,7 @@ package Unit2.Task3.implementations;
 import Unit2.Task3.interfaces.CanErase;
 
 public class Eraser implements CanErase {
-    private int name;
-
-    @Override
-    public String toString() {
-        return "Eraser{" +
-                "name=" + name +
-                ", price=" + price +
-                '}';
-    }
+    private String name = "eraser";
 
     private final int price = 15;
 
@@ -23,7 +15,7 @@ public class Eraser implements CanErase {
 
     @Override
     public String getName() {
-        return "eraser";
+        return name;
     }
 
     @Override
@@ -31,8 +23,12 @@ public class Eraser implements CanErase {
         return price;
     }
 
-    private void doSomth() {
-
+    @Override
+    public String toString() {
+        return "Eraser{" +
+                "name=" + name +
+                ", price=" + price +
+                '}';
     }
 
 }

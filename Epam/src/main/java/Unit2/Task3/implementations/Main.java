@@ -1,14 +1,9 @@
 package Unit2.Task3.implementations;
 
 public class Main {
-    public static void main(String[] args) throws NoSuchFieldException {
-        try {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
             StarterKit st=new StarterKit();
-            System.out.println(st);
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
+            System.out.println(st.officeSuppliesList);
     }
 
 }

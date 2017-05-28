@@ -11,10 +11,6 @@ public class PriceComparator implements Comparator<OfficeSupplies> {
     @Override
     public int compare(OfficeSupplies o1, OfficeSupplies o2) {
         return Integer.compare(o1.getPrice(),o2.getPrice());
-//        if (res == 0) {
-//            res = o1.getName().compareTo(o2.getName());
-//        }
-        //return res;
     }
 
 }

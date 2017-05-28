@@ -12,20 +12,16 @@ import java.util.Comparator;
  */
 public class Main {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
-        StarterKit sk=new StarterKit();
-        NameComparator nc=new NameComparator();
-        PriceComparator pc=new PriceComparator();
-        NameAndPriceComparator npc=new NameAndPriceComparator(nc,pc);
-        Collections.sort(sk.officeSuppliesList,nc);
-        System.out.println();
-        Collections.sort(sk.officeSuppliesList,pc);
-        OfficeSupplies os[]=sk.officeSuppliesList.toArray(new OfficeSupplies[sk.officeSuppliesList.size()]);
-        System.out.println(Arrays.toString(os));
-        Arrays.sort(os,nc);
-        System.out.println(Arrays.toString(os));
-        Arrays.sort(os,pc);
-        System.out.println(Arrays.toString(os));
+        StarterKit sk = new StarterKit();
+        NameComparator nc = new NameComparator();
+        PriceComparator pc = new PriceComparator();
+        NameAndPriceComparator npc = new NameAndPriceComparator(nc, pc);
 
-
+        Collections.sort(sk.officeSuppliesList, nc);
+        System.out.println("Sorted by name:\n" + sk.officeSuppliesList);
+        Collections.sort(sk.officeSuppliesList, pc);
+        System.out.println("Sorted by price:\n" + sk.officeSuppliesList);
+        Collections.sort(sk.officeSuppliesList, npc);
+        System.out.println("Sorted by name & price:\n" + sk.officeSuppliesList);
     }
 }
