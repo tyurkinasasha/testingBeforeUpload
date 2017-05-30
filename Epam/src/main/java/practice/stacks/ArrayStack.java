@@ -32,7 +32,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public int size() {
-        return (pointer + 1);
+        return (pointer);
     }
 
     @Override
