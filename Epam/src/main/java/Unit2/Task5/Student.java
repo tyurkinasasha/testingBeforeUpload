@@ -12,8 +12,6 @@ public class Student {
     private double average;
     private Map<Disciplines, Integer> marksList = new HashMap<>();
 
-
-
     private enum Disciplines {MATHS, PHYSICS, BIOLOGY, GEOGRAPHY, HISTORY;}
     public Student(String name, String surname) {
         this.name = name + " " + surname;
